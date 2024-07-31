@@ -1,0 +1,150 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --accent-color: #e74c3c;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+header {
+    background-color: rgba(128, 0, 128, 0.126);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+form {
+    background-color: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.2);
+    color: var(--text-color);
+    transition: all var(--transition-speed) ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    background-color: rgba(255,255,255,0.3);
+}
+
+button {
+    background-color: var(--accent-color);
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+.result-container, #cmykResult {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+#result {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.copy-button {
+    display: inline-block;
+    width: auto;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+#copy-confirmation {
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+#colorblindMode, #colorblindType {
+    margin-top: 1rem;
+}
+
+#cmykResult {
+    margin-top: 1rem;
+    font-style: italic;
+}
+footer{
+    text-align: center;
+}
+footer img{
+    width: 5em;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.result-container, form {
+    animation: fadeIn 0.5s ease-out;
+}
+
+input, select, button {
+    transition: transform 0.2s ease;
+}
+
+input:focus, select:focus, button:hover {
+    transform: scale(1.02);
+}
